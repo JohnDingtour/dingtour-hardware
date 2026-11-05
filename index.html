@@ -254,7 +254,7 @@
       <div class="wrap">
         <h2>Request a quote</h2>
         <p class="section-lead">Send your part list, drawings or target specs. This form opens your email client with a ready-made message (no backend required).</p>
-        <form class="card contact-box" action="mailto:john.dingtour@gmail.com" method="post" enctype="text/plain">
+        <form class="card contact-box" id="rfq">
           <div>
             <label for="name">Your name</label>
             <input id="name" name="Name" required placeholder="Alex Chen" />
@@ -284,6 +284,7 @@
           <div class="full">
             <button class="btn" type="submit">Send inquiry</button>
           </div>
+          <p id="rfq-status" class="full" hidden style="margin:0;color:var(--muted);font-size:14px;"></p>
         </form>
       </div>
     </section>
@@ -295,6 +296,39 @@
       <div>Template site · update products, photos and SLA anytime</div>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('rfq').addEventListener('submit', function (event) {
+      event.preventDefault();
+      var name = document.getElementById('name').value.trim();
+      var company = document.getElementById('company').value.trim();
+      var email = document.getElementById('email').value.trim();
+      var interest = document.getElementById('interest').value;
+      var message = document.getElementById('message').value.trim();
+      var subject = 'RFQ from ' + name + (company ? ' - ' + company : '');
+      var body = [
+        'Name: ' + name,
+        'Company: ' + (company || '(not provided)'),
+        'Email: ' + email,
+        'Interest: ' + interest,
+        '',
+        'Message:',
+        message || '(not provided)'
+      ].join('\n');
+      var mailtoUrl = 'mailto:john.dingtour@gmail.com?subject='
+        + encodeURIComponent(subject)
+        + '&body='
+        + encodeURIComponent(body);
+      var link = document.createElement('a');
+      link.href = mailtoUrl;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      var status = document.getElementById('rfq-status');
+      status.hidden = false;
+      status.textContent = 'Your email app should open with this inquiry addressed to john.dingtour@gmail.com.';
+    });
+  </script>
 </body>
 </html>
