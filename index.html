@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Haiyan Dingtour Hardware Co., Ltd | Industrial Fasteners</title>
+  <meta name="description" content="Haiyan Dingtour Hardware supplies a full range of industrial fasteners for global buyers: bolts, nuts, screws, washers, anchors and custom parts." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #1e293b;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #f59e0b;
+      --line: #334155;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, #0b1224 0%, #0f172a 40%, #111827 100%);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { width: min(1100px, 92%); margin: 0 auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      backdrop-filter: blur(10px);
+      background: rgba(15, 23, 42, 0.85);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0; gap: 16px;
+    }
+    .brand { font-weight: 700; letter-spacing: 0.2px; color: var(--white); }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); font-size: 14px; }
+    .nav-links a:hover { color: var(--white); text-decoration: none; }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #082f49;
+      font-weight: 700;
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover { filter: brightness(1.05); text-decoration: none; }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--line);
+    }
+    .hero {
+      padding: 72px 0 48px;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    .eyebrow {
+      color: var(--accent-2);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    h1 {
+      margin: 0 0 16px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.15;
+      color: var(--white);
+    }
+    .lead { color: var(--muted); font-size: 17px; margin: 0 0 24px; }
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 22px;
+    }
+    .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .stat strong { display: block; font-size: 22px; color: var(--white); }
+    .stat span { color: var(--muted); font-size: 13px; }
+    section { padding: 56px 0; }
+    h2 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      color: var(--white);
+    }
+    .section-lead { color: var(--muted); margin: 0 0 28px; max-width: 680px; }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+    .item h3 { margin: 0 0 8px; font-size: 18px; color: var(--white); }
+    .item p { margin: 0; color: var(--muted); font-size: 14px; }
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    .about {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 20px;
+    }
+    ul.check { margin: 12px 0 0; padding-left: 18px; color: var(--muted); }
+    ul.check li { margin: 8px 0; }
+    .contact-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .contact-box label {
+      display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px;
+    }
+    .contact-box input, .contact-box textarea, .contact-box select {
+      width: 100%;
+      background: #0b1220;
+      border: 1px solid var(--line);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 12px;
+      font: inherit;
+    }
+    .contact-box textarea { min-height: 120px; resize: vertical; }
+    .full { grid-column: 1 / -1; }
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 40px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .footer-row {
+      display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    }
+    @media (max-width: 860px) {
+      .hero, .about, .grid-3, .grid-4, .contact-box { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">Dingtour <span>Hardware</span></div>
+      <nav class="nav-links">
+        <a href="#products">Products</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn" href="#contact">Request a Quote</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">Haiyan, China · Global Supply</div>
+        <h1>Full-range industrial fasteners for OEM &amp; distributors</h1>
+        <p class="lead">
+          Haiyan Dingtour Hardware Co., Ltd supplies bolts, nuts, screws, washers, anchors and custom fastening solutions for buyers worldwide. Reliable quality, flexible MOQ, and export-ready packing.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="#contact">Get a quote</a>
+          <a class="btn btn-outline" href="#products">Browse products</a>
+        </div>
+      </div>
+      <div class="card">
+        <div class="stats">
+          <div class="stat"><strong>Full range</strong><span>Standard &amp; custom fasteners</span></div>
+          <div class="stat"><strong>Export ready</strong><span>Docs, packing, labeling</span></div>
+          <div class="stat"><strong>B2B focus</strong><span>OEM / wholesale buyers</span></div>
+          <div class="stat"><strong>Fast reply</strong><span>RFQ within 1 business day*</span></div>
+        </div>
+        <p style="margin:16px 0 0;color:var(--muted);font-size:12px;">*Template placeholder — update with your real SLA.</p>
+      </div>
+    </div>
+
+    <section id="products">
+      <div class="wrap">
+        <h2>Product categories</h2>
+        <p class="section-lead">A complete fastener lineup for industrial, construction, machinery and aftermarket supply chains. Specs and materials can be customized.</p>
+        <div class="grid-4">
+          <div class="card item"><div class="pill">Bolts</div><h3>Bolts &amp; studs</h3><p>Hex, carriage, flange, anchor bolts and stud bolts in multiple grades.</p></div>
+          <div class="card item"><div class="pill">Nuts</div><h3>Nuts</h3><p>Hex nuts, lock nuts, flange nuts, coupling nuts and nylon-insert types.</p></div>
+          <div class="card item"><div class="pill">Screws</div><h3>Screws</h3><p>Machine screws, self-tapping, wood screws and socket head cap screws.</p></div>
+          <div class="card item"><div class="pill">Washers</div><h3>Washers</h3><p>Flat, spring, lock and fender washers for assembly and vibration control.</p></div>
+          <div class="card item"><div class="pill">Anchors</div><h3>Anchors</h3><p>Expansion anchors, wedge anchors and concrete fastening solutions.</p></div>
+          <div class="card item"><div class="pill">Threaded</div><h3>Threaded rods</h3><p>Fully threaded rods and bars cut to length for construction and OEM use.</p></div>
+          <div class="card item"><div class="pill">Specialty</div><h3>Specialty parts</h3><p>Non-standard drawings, special coatings and mixed kits for projects.</p></div>
+          <div class="card item"><div class="pill">Materials</div><h3>Materials &amp; finish</h3><p>Carbon steel, stainless, zinc plated, hot-dip galvanized and more.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-us">
+      <div class="wrap">
+        <h2>Why work with Dingtour</h2>
+        <p class="section-lead">Built for overseas buyers who need clear communication, stable quality and practical export support.</p>
+        <div class="grid-3">
+          <div class="card item"><h3>One-stop sourcing</h3><p>Full fastener categories from one supplier — fewer vendors, simpler purchasing.</p></div>
+          <div class="card item"><h3>Quality control</h3><p>Incoming inspection, dimension checks and packing inspection before shipment.</p></div>
+          <div class="card item"><h3>Export experience</h3><p>Commercial invoice, packing list and labeling prepared for international logistics.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about">
+        <div>
+          <h2>About us</h2>
+          <p class="section-lead" style="margin-bottom:12px;">
+            Haiyan Dingtour Hardware Co., Ltd is a China-based fastener supplier focused on overseas B2B customers. We help distributors, wholesalers and OEM buyers source standard and custom fasteners with dependable lead times.
+          </p>
+          <ul class="check">
+            <li>Based in Haiyan, a well-known fastener manufacturing region</li>
+            <li>Support for drawings, samples and mixed-container orders</li>
+            <li>English communication for RFQ, production and shipment updates</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin-top:0;color:var(--white);">Quick facts</h3>
+          <p style="color:var(--muted);margin:0 0 8px;"><strong style="color:var(--white);">Company:</strong> Haiyan Dingtour Hardware Co., Ltd</p>
+          <p style="color:var(--muted);margin:0 0 8px;"><strong style="color:var(--white);">Focus:</strong> Full-range industrial fasteners</p>
+          <p style="color:var(--muted);margin:0 0 8px;"><strong style="color:var(--white);">Customers:</strong> Distributors · Wholesalers · OEM</p>
+          <p style="color:var(--muted);margin:0;"><strong style="color:var(--white);">Contact:</strong> <a href="mailto:john.dingtour@gmail.com">john.dingtour@gmail.com</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <h2>Request a quote</h2>
+        <p class="section-lead">Send your part list, drawings or target specs. This form opens your email client with a ready-made message (no backend required).</p>
+        <form class="card contact-box" action="mailto:john.dingtour@gmail.com" method="post" enctype="text/plain">
+          <div>
+            <label for="name">Your name</label>
+            <input id="name" name="Name" required placeholder="Alex Chen" />
+          </div>
+          <div>
+            <label for="company">Company</label>
+            <input id="company" name="Company" placeholder="Acme Hardware LLC" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="Email" type="email" required placeholder="you@company.com" />
+          </div>
+          <div>
+            <label for="interest">Interest</label>
+            <select id="interest" name="Interest">
+              <option>Bolts &amp; nuts</option>
+              <option>Screws &amp; washers</option>
+              <option>Anchors / rods</option>
+              <option>Custom / mixed order</option>
+              <option>General inquiry</option>
+            </select>
+          </div>
+          <div class="full">
+            <label for="message">Message / RFQ details</label>
+            <textarea id="message" name="Message" placeholder="Standards, sizes, grades, quantity, destination port..."></textarea>
+          </div>
+          <div class="full">
+            <button class="btn" type="submit">Send inquiry</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <div>© <span id="year"></span> Haiyan Dingtour Hardware Co., Ltd. All rights reserved.</div>
+      <div>Template site · update products, photos and SLA anytime</div>
+    </div>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
