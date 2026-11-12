@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Dingtour Hardware — Industrial Fasteners</title>
-  <meta name="description" content="Haiyan Dingtour Hardware supplies a complete range of industrial fasteners to global OEM, distributors, and wholesalers.">
+  <meta name="description" content="Haiyan Dingtour Hardware supplies industrial fasteners to OEM, distributors, and wholesalers, with drawings, samples, mixed-container orders, and English communication during enquiry and supply.">
   <meta name="theme-color" content="#F3F4F1">
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="assets/favicon.png" sizes="64x64">
@@ -37,7 +37,8 @@
     }
     a { color: inherit; text-decoration: none; }
     img, svg { display: block; max-width: 100%; }
-    a:focus-visible {
+    a:focus-visible,
+    summary:focus-visible {
       outline: 1px solid var(--accent);
       outline-offset: 3px;
     }
@@ -72,21 +73,24 @@
       height: 34px;
       width: auto;
     }
-    nav {
+    .primary-nav {
       display: flex;
       align-items: center;
       gap: 28px;
     }
-    nav a {
-      font-family: "IBM Plex Mono", monospace;
+    .primary-nav a,
+    .nav-panel a {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 11px;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--navy);
       position: relative;
       padding: 6px 0;
+      white-space: nowrap;
     }
-    nav a::after {
+    .primary-nav a::after,
+    .nav-panel a::after {
       content: "";
       position: absolute;
       left: 0;
@@ -98,32 +102,72 @@
       transform-origin: left;
       transition: transform 0.25s ease;
     }
-    nav a:hover::after,
-    nav a:focus-visible::after { transform: scaleX(1); }
-    nav a:focus-visible { outline: none; }
+    .primary-nav a:hover::after,
+    .primary-nav a:focus-visible::after,
+    .nav-panel a:hover::after,
+    .nav-panel a:focus-visible::after { transform: scaleX(1); }
+    .primary-nav a:focus-visible,
+    .nav-panel a:focus-visible { outline: none; }
 
-    .hero {
-      min-height: calc(100vh - var(--header-h));
+    .nav-toggle { display: none; }
+    .nav-panel { display: none; }
+    .nav-toggle:not([open])::details-content { display: none; }
+    .nav-toggle summary {
+      list-style: none;
+      cursor: pointer;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--navy);
+    }
+    .nav-toggle summary::-webkit-details-marker { display: none; }
+    .nav-toggle[open] .when-closed,
+    .nav-toggle:not([open]) .when-open { display: none; }
+    .nav-toggle[open] .nav-panel {
       display: flex;
       flex-direction: column;
+      position: absolute;
+      top: var(--header-h);
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border-bottom: 1px solid var(--line);
+      padding: 4px max(20px, calc((100% - 1180px) / 2)) 12px;
+    }
+    .nav-panel a {
+      padding: 15px 0;
+      border-top: 1px solid var(--line);
+    }
+    .nav-panel a:first-child { border-top: 0; }
+
+    .hero {
       position: relative;
       border-bottom: 1px solid var(--line);
+      background-color: var(--bg);
       background-image:
-        linear-gradient(to right, rgba(16,20,28,0.045) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(16,20,28,0.045) 1px, transparent 1px);
+        linear-gradient(to right, rgba(16, 20, 28, 0.045) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(16, 20, 28, 0.045) 1px, transparent 1px);
       background-size: 80px 80px;
       background-position: center top;
     }
-    .hero-main {
-      flex: 1;
+    .hero-split {
       display: grid;
-      grid-template-columns: 1fr 0.72fr;
-      gap: 72px;
-      align-items: end;
-      padding: 72px 0 56px;
+      grid-template-columns: minmax(0, 1.22fr) minmax(300px, 0.78fr);
+      align-items: stretch;
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 64px 52px 52px 0;
+      min-height: 540px;
     }
     .kicker {
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 11px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -142,38 +186,59 @@
     .hero h1 {
       font-family: "Space Grotesk", sans-serif;
       font-weight: 500;
-      font-size: clamp(44px, 5.4vw, 76px);
-      line-height: 0.95;
+      font-size: clamp(40px, 4.6vw, 64px);
+      line-height: 0.96;
       letter-spacing: -0.038em;
       color: var(--navy);
-      max-width: 14ch;
+      max-width: 13em;
+      text-wrap: balance;
     }
-    .hero-copy { padding-bottom: 8px; }
     .hero-lead {
       font-size: 17px;
       line-height: 1.6;
       color: var(--muted);
-      max-width: 38ch;
-      margin-bottom: 36px;
+      max-width: 48ch;
+      margin-top: 28px;
     }
-    .hero-meta {
+    .hero-panel {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
+      place-items: center;
+      min-height: 540px;
+      padding: 36px 28px;
+      border-left: 1px solid rgba(243, 244, 241, 0.14);
+      background-color: var(--navy);
+      background-image:
+        linear-gradient(to right, rgba(243, 244, 241, 0.055) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(243, 244, 241, 0.055) 1px, transparent 1px),
+        linear-gradient(165deg, color-mix(in srgb, var(--navy) 62%, var(--bg)) 0%, var(--navy) 46%, var(--ink) 100%);
+      background-size: 80px 80px, 80px 80px, auto;
+      background-position: center top;
+    }
+    .hero-mark {
+      width: min(92%, 460px);
+      height: auto;
+    }
+    .hero-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
       border-top: 1px solid var(--line);
     }
-    .hero-meta div {
-      padding: 16px 20px 0 0;
+    .hero-facts div {
+      padding: 16px 18px 18px 0;
     }
-    .hero-meta dt {
-      font-family: "IBM Plex Mono", monospace;
+    .hero-facts div + div {
+      padding-left: 18px;
+      border-left: 1px solid var(--line);
+    }
+    .hero-facts dt {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 10px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--muted);
       margin-bottom: 6px;
     }
-    .hero-meta dd {
+    .hero-facts dd {
       font-family: "Space Grotesk", sans-serif;
       font-size: 15px;
       font-weight: 500;
@@ -187,7 +252,7 @@
       align-items: center;
       gap: 16px;
       flex-wrap: wrap;
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 11px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
@@ -195,7 +260,9 @@
     }
 
     section { padding: 88px 0; }
-    #products, #why, #about, #contact { scroll-margin-top: 12px; }
+    #products, #capabilities, #about, #contact {
+      scroll-margin-top: calc(var(--header-h) + 8px);
+    }
     .section-head {
       display: flex;
       align-items: baseline;
@@ -203,10 +270,9 @@
       gap: 24px;
       border-bottom: 1px solid var(--line);
       padding-bottom: 20px;
-      margin-bottom: 0;
     }
     .section-index {
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 11px;
       letter-spacing: 0.16em;
       text-transform: uppercase;
@@ -218,92 +284,167 @@
       font-size: 28px;
       letter-spacing: -0.03em;
       color: var(--navy);
+      text-wrap: balance;
     }
     .section-note {
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 11px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: var(--muted);
     }
     .section-head-start { justify-content: flex-start; gap: 28px; }
-    .section-head-start h2 { font-size: 28px; }
+    .section-lead {
+      max-width: 52ch;
+      padding-top: 22px;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--navy);
+    }
 
     #products { padding-top: 72px; }
     .product-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      margin-top: -1px;
       border-left: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
     }
     .product {
-      padding: 28px 24px 32px;
       border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
       border-top: 1px solid var(--line);
       background: transparent;
-      min-height: 280px;
       display: flex;
       flex-direction: column;
+      min-height: 100%;
       transition: background 0.2s ease;
     }
     .product:hover { background: var(--paper); }
-    .product-top {
+    .product-well {
+      aspect-ratio: 4 / 5;
+      display: grid;
+      place-items: center;
+      position: relative;
+      color: var(--bg-2);
+      background-color: var(--navy);
+      background-image:
+        linear-gradient(to right, rgba(243, 244, 241, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(243, 244, 241, 0.05) 1px, transparent 1px),
+        linear-gradient(180deg, color-mix(in srgb, var(--navy) 55%, var(--bg)) 0%, var(--navy) 40%, var(--ink) 100%);
+      background-size: 80px 80px, 80px 80px, auto;
+      border-bottom: 1px solid rgba(243, 244, 241, 0.08);
+    }
+    .product-well::before {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(243, 244, 241, 0.16);
+      pointer-events: none;
+    }
+    .product-well svg {
+      width: 54%;
+      height: auto;
+      position: relative;
+    }
+    .product-body {
+      padding: 18px 20px 22px;
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 28px;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
     }
     .product-num {
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 11px;
       color: var(--muted);
       letter-spacing: 0.08em;
-    }
-    .product svg {
-      width: 72px;
-      height: 72px;
-      color: var(--navy);
     }
     .product h3 {
       font-family: "Space Grotesk", sans-serif;
       font-weight: 500;
       font-size: 18px;
       letter-spacing: -0.02em;
-      margin-bottom: 8px;
+      position: relative;
+      width: fit-content;
+      max-width: 100%;
     }
+    .product h3::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -2px;
+      height: 1px;
+      background: var(--accent);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s ease;
+    }
+    .product:hover h3::after { transform: scaleX(1); }
     .product p {
       font-size: 14px;
       line-height: 1.5;
       color: var(--muted);
+    }
+    .tags {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
       margin-top: auto;
+      padding-top: 12px;
+    }
+    .tags li {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--line);
+      padding: 4px 7px;
     }
 
-    #why { padding-top: 72px; }
-    .why-grid {
+    #capabilities { padding-top: 72px; }
+    .cap-grid {
+      list-style: none;
+      counter-reset: cap;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
+      margin-top: 28px;
       border-left: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
-    .why-item {
-      padding: 40px 36px 8px 36px;
+    .cap-item {
+      counter-increment: cap;
+      padding: 28px 24px 32px;
       border-right: 1px solid var(--line);
+      border-top: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
-    .why-item:first-child { padding-left: 0; }
-    .why-num {
-      font-family: "IBM Plex Mono", monospace;
+    .cap-item h3::before {
+      content: counter(cap, decimal-leading-zero);
+      display: block;
+      margin-bottom: 16px;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 11px;
+      font-weight: 400;
       letter-spacing: 0.14em;
       color: var(--accent);
-      margin-bottom: 20px;
     }
-    .why-item h3 {
+    .cap-item h3 {
       font-family: "Space Grotesk", sans-serif;
       font-weight: 500;
-      font-size: 22px;
+      font-size: 20px;
+      line-height: 1.2;
       letter-spacing: -0.03em;
-      margin-bottom: 14px;
+      text-wrap: balance;
     }
-    .why-item p { color: var(--muted); font-size: 15px; max-width: 32ch; }
+    .cap-item p {
+      color: var(--muted);
+      font-size: 15px;
+    }
 
     #about {
       padding-top: 72px;
@@ -314,7 +455,9 @@
       grid-template-columns: 1.15fr 0.85fr;
       gap: 80px;
       padding-top: 40px;
+      min-width: 0;
     }
+    .about-copy { min-width: 0; }
     .about-copy p {
       font-size: 18px;
       line-height: 1.65;
@@ -328,23 +471,26 @@
     }
     .facts {
       border-top: 1px solid var(--line);
+      min-width: 0;
     }
     .facts div {
       display: grid;
-      grid-template-columns: 120px 1fr;
+      grid-template-columns: 120px minmax(0, 1fr);
       gap: 16px;
       padding: 14px 0;
       border-bottom: 1px solid var(--line);
       align-items: baseline;
+      min-width: 0;
     }
     .facts dt {
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 10px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--muted);
     }
-    .facts dd { font-size: 15px; }
+    .facts dd { font-size: 15px; min-width: 0; }
+    .facts a { overflow-wrap: anywhere; }
     .facts a:hover { color: var(--accent); }
 
     #contact {
@@ -366,6 +512,7 @@
       font-weight: 500;
       font-size: 36px;
       letter-spacing: -0.03em;
+      text-wrap: balance;
     }
     .contact-details {
       padding: 72px 0 72px 64px;
@@ -386,7 +533,7 @@
       font-size: 16px;
     }
     .contact-details .email-label {
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 10px;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -411,19 +558,51 @@
       color: var(--accent);
       border-color: var(--accent);
     }
+    .write-note {
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line);
+      max-width: 46ch;
+    }
+    .write-note > p {
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .write-note ul { list-style: none; }
+    .write-note li {
+      position: relative;
+      padding: 10px 0 10px 16px;
+      border-top: 1px solid var(--line);
+      font-size: 15px;
+      line-height: 1.45;
+      color: var(--navy);
+    }
+    .write-note li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 18px;
+      width: 7px;
+      height: 1px;
+      background: var(--accent);
+    }
 
     footer {
       border-top: 1px solid var(--line);
-      padding: 40px 0 22px;
+      padding: 36px 0 22px;
     }
     .footer-inner {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      gap: 28px;
+      gap: 22px;
     }
     .footer-logo {
-      width: min(440px, 100%);
+      width: min(260px, 70%);
       height: auto;
     }
     .footer-bar {
@@ -434,7 +613,7 @@
       flex-wrap: wrap;
       border-top: 1px solid var(--line);
       padding-top: 18px;
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Mono", ui-monospace, monospace;
       font-size: 11px;
       letter-spacing: 0.04em;
       color: var(--muted);
@@ -442,19 +621,49 @@
 
     @media (max-width: 900px) {
       .wrap { width: calc(100% - 40px); }
-      .hero-main, .about-grid, .contact-inner, .why-grid { grid-template-columns: 1fr; gap: 32px; }
-      .product-grid { grid-template-columns: 1fr 1fr; }
-      .hero { min-height: auto; }
-      .contact-label, .contact-details { padding: 48px 0; border-right: 0; padding-left: 0; }
-      .why-item, .why-item:first-child { padding: 32px 0; border-right: 0; border-bottom: 1px solid var(--line); }
-      nav { gap: 16px; }
+      .hero-split,
+      .about-grid,
+      .contact-inner { grid-template-columns: 1fr; }
+      .hero-copy {
+        min-height: 0;
+        padding: 36px 0 28px;
+        order: -1;
+      }
+      .hero-panel {
+        min-height: 320px;
+        border-left: 0;
+        border-top: 1px solid rgba(243, 244, 241, 0.14);
+      }
+      .product-grid,
+      .cap-grid { grid-template-columns: 1fr 1fr; }
+      .contact-label,
+      .contact-details {
+        padding: 48px 0;
+        border-right: 0;
+        padding-left: 0;
+      }
+      .primary-nav { gap: 16px; }
       .section-head { flex-wrap: wrap; }
+      .about-grid { gap: 32px; }
     }
     @media (max-width: 640px) {
-      nav { display: none; }
-      .product-grid { grid-template-columns: 1fr; }
-      .hero h1 { font-size: 40px; }
+      .primary-nav { display: none; }
+      .nav-toggle { display: block; }
+      .product-grid,
+      .cap-grid,
+      .hero-facts { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 38px; }
+      .hero-panel { min-height: 260px; }
+      .hero-facts div + div {
+        border-left: 0;
+        padding-left: 0;
+        border-top: 1px solid var(--line);
+      }
       .wordmark img { height: 28px; }
+      .facts div {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
       .section-head {
         flex-direction: column;
         align-items: flex-start;
@@ -463,6 +672,13 @@
       .section-head-start h2,
       .section-head h2 { font-size: 24px; }
       .contact-label h2 { font-size: 32px; }
+      .cap-item { padding: 24px 0 28px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition: none !important;
+      }
     }
   </style>
 </head>
@@ -472,43 +688,80 @@
       <a class="wordmark" href="#top">
         <img src="assets/logo-wordmark.png" alt="Dingtour" width="871" height="134">
       </a>
-      <nav aria-label="Primary">
+      <nav class="primary-nav" aria-label="Primary">
         <a href="#products">Products</a>
-        <a href="#why">Why Us</a>
+        <a href="#capabilities">Capabilities</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
+      <details class="nav-toggle">
+        <summary>
+          <span class="when-closed">Menu</span>
+          <span class="when-open">Close</span>
+        </summary>
+        <nav class="nav-panel" aria-label="Primary">
+          <a href="#products">Products</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </details>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero">
-      <div class="wrap hero-main">
-        <div>
-          <p class="kicker">01 — Industrial fasteners</p>
-          <h1>Full-range industrial fasteners for OEM and distributors.</h1>
-        </div>
+    <section class="hero" aria-label="Introduction">
+      <div class="wrap hero-split">
         <div class="hero-copy">
-          <p class="hero-lead">Dingtour Hardware supplies a complete range of industrial fasteners to global OEM, distributors, and wholesalers. Export-ready production, reliable quality, and flexible minimum order quantities.</p>
-          <dl class="hero-meta">
-            <div>
-              <dt>Location</dt>
-              <dd>Haiyan, China</dd>
-            </div>
-            <div>
-              <dt>Customers</dt>
-              <dd>OEM · Distribution</dd>
-            </div>
-            <div>
-              <dt>Supply</dt>
-              <dd>Full-range fasteners</dd>
-            </div>
-            <div>
-              <dt>Orders</dt>
-              <dd>Flexible MOQ</dd>
-            </div>
-          </dl>
+          <p class="kicker">01 — Industrial fasteners</p>
+          <h1>Industrial fasteners for OEM and distribution partners.</h1>
+          <p class="hero-lead">Dingtour Hardware supplies a complete range of industrial fasteners to global OEM, distributors, and wholesalers. We support technical drawings, samples, and mixed-container orders, with English-language communication during enquiry and supply, plus export-ready production, reliable quality, and flexible minimum order quantities.</p>
         </div>
+        <div class="hero-panel">
+          <svg class="hero-mark" viewBox="0 0 800 800" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="metal" x1="16%" y1="6%" x2="84%" y2="94%">
+                <stop offset="0%" stop-color="#FAFAF7"/>
+                <stop offset="42%" stop-color="#E6E7E3"/>
+                <stop offset="100%" stop-color="#5A616C"/>
+              </linearGradient>
+            </defs>
+            <g fill="none" stroke-linejoin="miter" stroke-miterlimit="2.2">
+              <circle cx="400" cy="400" r="292" stroke="rgba(243,244,241,0.18)" stroke-width="1.25"/>
+              <path d="M400 78 V104 M400 696 V722 M78 400 H104 M696 400 H722" stroke="rgba(243,244,241,0.4)" stroke-width="1.25"/>
+              <g stroke="#E6E7E3" stroke-opacity="0.82">
+                <circle cx="400" cy="400" r="250" stroke-width="10"/>
+                <polygon points="562.0,400.0 481.0,540.3 319.0,540.3 238.0,400.0 319.0,259.7 481.0,259.7" stroke-width="9"/>
+                <polygon points="506.0,400.0 453.0,491.8 347.0,491.8 294.0,400.0 347.0,308.2 453.0,308.2" stroke-width="8"/>
+              </g>
+              <g stroke="url(#metal)">
+                <circle cx="400" cy="400" r="250" stroke-width="2.4"/>
+                <polygon points="562.0,400.0 481.0,540.3 319.0,540.3 238.0,400.0 319.0,259.7 481.0,259.7" stroke-width="2.2"/>
+                <polygon points="506.0,400.0 453.0,491.8 347.0,491.8 294.0,400.0 347.0,308.2 453.0,308.2" stroke-width="2"/>
+              </g>
+            </g>
+          </svg>
+        </div>
+      </div>
+      <div class="wrap">
+        <dl class="hero-facts">
+          <div>
+            <dt>Location</dt>
+            <dd>Haiyan, China</dd>
+          </div>
+          <div>
+            <dt>Customers</dt>
+            <dd>OEM · Distribution</dd>
+          </div>
+          <div>
+            <dt>Supply</dt>
+            <dd>Full-range</dd>
+          </div>
+          <div>
+            <dt>Orders</dt>
+            <dd>Flexible MOQ</dd>
+          </div>
+        </dl>
       </div>
       <div class="wrap hero-foot">
         <span>Haiyan Dingtour Hardware Co., Ltd</span>
@@ -525,9 +778,8 @@
         </div>
         <div class="product-grid">
           <article class="product">
-            <div class="product-top">
-              <span class="product-num">01</span>
-              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+            <div class="product-well" aria-hidden="true">
+              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
                 <path d="M30 20 L44 12 L58 20 L58 34 L44 30 L30 34 Z"/>
                 <path d="M44 12 V30"/>
                 <path d="M30 20 L44 30 L58 20"/>
@@ -537,26 +789,40 @@
                 <path d="M40 70 L44 75 L48 70"/>
               </svg>
             </div>
-            <h3>Bolts &amp; studs</h3>
-            <p>Hex, flange, and custom bolts, with studs manufactured to drawing.</p>
+            <div class="product-body">
+              <span class="product-num">01</span>
+              <h3>Bolts &amp; studs</h3>
+              <p>Hex, flange, and custom bolts, with studs manufactured to drawing.</p>
+              <ul class="tags">
+                <li>Carbon steel</li>
+                <li>Stainless</li>
+                <li>Specified finish</li>
+              </ul>
+            </div>
           </article>
           <article class="product">
-            <div class="product-top">
-              <span class="product-num">02</span>
-              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+            <div class="product-well" aria-hidden="true">
+              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
                 <path d="M44 14 L68 27 V53 L44 66 L20 53 V27 Z"/>
                 <path d="M44 14 L44 28 M68 27 L55.5 34.5 M20 27 L32.5 34.5"/>
                 <circle cx="44" cy="40" r="11"/>
                 <circle cx="44" cy="40" r="6"/>
               </svg>
             </div>
-            <h3>Nuts</h3>
-            <p>Hex, lock, flange, and other nut types specified for the assembly.</p>
+            <div class="product-body">
+              <span class="product-num">02</span>
+              <h3>Nuts</h3>
+              <p>Hex, lock, flange, and other nut types specified for the assembly.</p>
+              <ul class="tags">
+                <li>Carbon steel</li>
+                <li>Stainless</li>
+                <li>Specified finish</li>
+              </ul>
+            </div>
           </article>
           <article class="product">
-            <div class="product-top">
-              <span class="product-num">03</span>
-              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+            <div class="product-well" aria-hidden="true">
+              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
                 <ellipse cx="44" cy="18" rx="13" ry="7"/>
                 <path d="M31 18 V25 H57 V18"/>
                 <path d="M44 14.5 V22 M38 18.5 H50"/>
@@ -564,25 +830,39 @@
                 <path d="M38 32 H50 M38 38 H50 M38 44 H50 M38 50 H50 M38 56 H50"/>
               </svg>
             </div>
-            <h3>Screws</h3>
-            <p>Machine, self-tapping, and socket screws in standard and custom forms.</p>
+            <div class="product-body">
+              <span class="product-num">03</span>
+              <h3>Screws</h3>
+              <p>Machine, self-tapping, and socket screws in standard and custom forms.</p>
+              <ul class="tags">
+                <li>Carbon steel</li>
+                <li>Stainless</li>
+                <li>Specified finish</li>
+              </ul>
+            </div>
           </article>
           <article class="product">
-            <div class="product-top">
-              <span class="product-num">04</span>
-              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+            <div class="product-well" aria-hidden="true">
+              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
                 <ellipse cx="44" cy="42" rx="26" ry="20"/>
                 <ellipse cx="44" cy="42" rx="11" ry="8.5"/>
                 <path d="M18 42 A26 20 0 0 0 70 42" opacity="0.7"/>
               </svg>
             </div>
-            <h3>Washers</h3>
-            <p>Flat, spring, and special washers matched to the fastener and joint.</p>
+            <div class="product-body">
+              <span class="product-num">04</span>
+              <h3>Washers</h3>
+              <p>Flat, spring, and special washers matched to the fastener and joint.</p>
+              <ul class="tags">
+                <li>Carbon steel</li>
+                <li>Stainless</li>
+                <li>Specified finish</li>
+              </ul>
+            </div>
           </article>
           <article class="product">
-            <div class="product-top">
-              <span class="product-num">05</span>
-              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+            <div class="product-well" aria-hidden="true">
+              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
                 <path d="M32 12 L44 6 L56 12 L56 22 L32 22 Z"/>
                 <path d="M44 6 V22"/>
                 <path d="M28 22 H60 V26 H28 Z"/>
@@ -594,26 +874,40 @@
                 <path d="M44 30 V68"/>
               </svg>
             </div>
-            <h3>Anchors</h3>
-            <p>Expansion and construction anchors for installation in base materials.</p>
+            <div class="product-body">
+              <span class="product-num">05</span>
+              <h3>Anchors</h3>
+              <p>Expansion and construction anchors for installation in base materials.</p>
+              <ul class="tags">
+                <li>Carbon steel</li>
+                <li>Stainless</li>
+                <li>Specified finish</li>
+              </ul>
+            </div>
           </article>
           <article class="product">
-            <div class="product-top">
-              <span class="product-num">06</span>
-              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+            <div class="product-well" aria-hidden="true">
+              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
                 <path d="M36 10 L44 6 L52 10 L48 16 H40 Z"/>
                 <path d="M40 16 V72 M48 16 V72"/>
                 <path d="M40 20 L48 24 M40 26 L48 30 M40 32 L48 36 M40 38 L48 42 M40 44 L48 48 M40 50 L48 54 M40 56 L48 60 M40 62 L48 66"/>
                 <path d="M40 72 H48 L52 78 L44 82 L36 78 Z"/>
               </svg>
             </div>
-            <h3>Threaded rods</h3>
-            <p>Fully and partially threaded rod, cut and supplied to required length.</p>
+            <div class="product-body">
+              <span class="product-num">06</span>
+              <h3>Threaded rods</h3>
+              <p>Fully and partially threaded rod, cut and supplied to required length.</p>
+              <ul class="tags">
+                <li>Carbon steel</li>
+                <li>Stainless</li>
+                <li>Specified finish</li>
+              </ul>
+            </div>
           </article>
           <article class="product">
-            <div class="product-top">
-              <span class="product-num">07</span>
-              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+            <div class="product-well" aria-hidden="true">
+              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
                 <circle cx="44" cy="22" r="14"/>
                 <circle cx="44" cy="22" r="8"/>
                 <rect x="36" y="36" width="16" height="8"/>
@@ -622,49 +916,66 @@
                 <path d="M40 70 L44 74 L48 70"/>
               </svg>
             </div>
-            <h3>Specialty parts</h3>
-            <p>Non-standard and drawing-based parts for specific assemblies.</p>
+            <div class="product-body">
+              <span class="product-num">07</span>
+              <h3>Specialty parts</h3>
+              <p>Non-standard and drawing-based parts for specific assemblies.</p>
+              <ul class="tags">
+                <li>Carbon steel</li>
+                <li>Stainless</li>
+                <li>Specified finish</li>
+              </ul>
+            </div>
           </article>
           <article class="product">
-            <div class="product-top">
-              <span class="product-num">08</span>
-              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+            <div class="product-well" aria-hidden="true">
+              <svg viewBox="0 0 88 88" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round">
                 <path d="M6 30 L20 20 L34 30 L34 52 L20 62 L6 52 Z"/>
                 <circle cx="50" cy="41" r="15"/>
                 <rect x="67" y="26" width="16" height="30"/>
               </svg>
             </div>
-            <h3>Materials &amp; finish</h3>
-            <p>Carbon steel, stainless, and other materials with the specified finish.</p>
+            <div class="product-body">
+              <span class="product-num">08</span>
+              <h3>Materials &amp; finish</h3>
+              <p>Carbon steel, stainless, and other materials with the specified finish.</p>
+              <ul class="tags">
+                <li>Carbon steel</li>
+                <li>Stainless</li>
+                <li>Specified finish</li>
+              </ul>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="why">
+    <section id="capabilities">
       <div class="wrap">
         <div class="section-head">
-          <p class="section-index">03 — Why us</p>
-          <h2>Why work with Dingtour</h2>
-          <p class="section-note">Three working principles</p>
+          <p class="section-index">03 — Capabilities</p>
+          <h2>From enquiry to shipment</h2>
+          <p class="section-note">Four steps</p>
         </div>
-        <div class="why-grid">
-          <article class="why-item">
-            <p class="why-num">01</p>
-            <h3>One-stop sourcing</h3>
-            <p>A full range of fasteners from a single supplier, simplifying procurement for OEM and distribution partners.</p>
-          </article>
-          <article class="why-item">
-            <p class="why-num">02</p>
-            <h3>Quality control</h3>
-            <p>Consistent inspection and process control so parts meet the specifications you provide.</p>
-          </article>
-          <article class="why-item">
-            <p class="why-num">03</p>
-            <h3>Export experience</h3>
+        <p class="section-lead">For OEM, distributors, wholesalers, and mixed-container orders.</p>
+        <ol class="cap-grid">
+          <li class="cap-item">
+            <h3>Enquiry and specification</h3>
+            <p>A full range of fasteners from one supplier, for OEM and distribution partners, with English-language communication throughout the enquiry.</p>
+          </li>
+          <li class="cap-item">
+            <h3>Drawing or sample review</h3>
+            <p>Technical drawings and samples are reviewed so the part matches the specification you provide.</p>
+          </li>
+          <li class="cap-item">
+            <h3>Production and inspection to the specification provided</h3>
+            <p>Consistent inspection and process control so parts meet the specification you provide.</p>
+          </li>
+          <li class="cap-item">
+            <h3>Export packing, labelling, and documents</h3>
             <p>Documentation, packing, and labeling prepared for international shipment.</p>
-          </article>
-        </div>
+          </li>
+        </ol>
       </div>
     </section>
 
@@ -712,6 +1023,15 @@
           <p class="place">Haiyan, China</p>
           <p class="email-label">Email</p>
           <a class="email" href="mailto:john.dingtour@gmail.com">john.dingtour@gmail.com</a>
+          <div class="write-note">
+            <p>When you write, please include:</p>
+            <ul>
+              <li>part type and standard if known</li>
+              <li>size, material, and finish</li>
+              <li>quantity and packing preference</li>
+              <li>a drawing or sample reference for special parts</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
