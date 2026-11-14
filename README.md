@@ -1,3 +1,9 @@
 # Haiyan Dingtour Hardware
 
-Haiyan Dingtour Hardware Co., Ltd, based in Haiyan, China, exports a full range of industrial fasteners — bolts, nuts, screws, washers, anchors, and custom parts — for OEM buyers, distributors, and wholesalers. This repository is the company’s English brochure site, meant to be served by GitHub Pages at https://johndingtour.github.io/dingtour-hardware/. Inquiries: john.dingtour@gmail.com.
+English brochure for Haiyan Dingtour Hardware Co., Ltd, an import-export company in Haiyan, China. The company supplies a full range of industrial fasteners. The range it exports is not limited to its own factory's products.
+
+This repository is the site served by GitHub Pages. The custom domain in `CNAME` is dingtour-hardware.com.
+
+Enquiries: [john.dingtour@gmail.com](mailto:john.dingtour@gmail.com).
+
+Photograph, illustration, and font credits are in [CREDITS.md](CREDITS.md). Barlow Condensed and Libre Franklin are bundled under the SIL Open Font License (`fonts/OFL-BarlowCondensed.txt`, `fonts/OFL-LibreFranklin.txt`).
