@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" fill="none" role="img" aria-hidden="true">
+  <title>Drawing-based part</title>
+  <g stroke="#1C242C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <rect x="88" y="36" width="64" height="28"/>
+    <path d="M72 64 L168 64 L172 76 L68 76 Z"/>
+    <rect x="100" y="76" width="40" height="24"/>
+    <rect x="100" y="100" width="40" height="62"/>
+    <line x1="100.0" y1="104.2" x2="140.0" y2="109.2"/>
+    <line x1="100.0" y1="112.0" x2="140.0" y2="117.0"/>
+    <line x1="100.0" y1="119.7" x2="140.0" y2="124.7"/>
+    <line x1="100.0" y1="127.4" x2="140.0" y2="132.4"/>
+    <line x1="100.0" y1="135.1" x2="140.0" y2="140.1"/>
+    <line x1="100.0" y1="142.8" x2="140.0" y2="147.8"/>
+    <line x1="100.0" y1="150.5" x2="140.0" y2="155.5"/>
+    <path d="M100 162 L100 154 L140 154 L140 162"/>
+    <path d="M40 36 L40 168 L52 168"/>
+    <path d="M34 36 L40 30 L46 36"/>
+    <path d="M34 168 L40 174 L46 168"/>
+  </g>
+</svg>

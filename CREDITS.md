@@ -30,21 +30,34 @@ These photographs were considered in earlier design rounds and are not part of t
 
 ## Product images
 
-A consistent, licensed product-photo set with fewer than three fasteners per frame could not be assembled from Unsplash, Pexels, Pixabay, or Wikimedia Commons without mixing inconsistent styles or using crowded group shots. Each category therefore uses an original catalog illustration, with at most two items per frame and a shared graphite studio plate. The published files are JPEG.
+Confirmed types use white-background studio renderings made for this page. They are not photographs of Dingtour stock, and the page says so. Draft types that are not yet confirmed use original monochrome line drawings, labelled “Draft — to confirm” and “Product photo pending”.
 
-On-page label for every product image:
+| Local file | What it depicts | Where it appears | Source |
+|---|---|---|---|
+| `images/product-studio/hex-bolt-white-studio.jpg` | Hex bolt | B06-1 Hex Bolts | Original studio rendering for this page |
+| `images/product-studio/flange-bolt-white-studio.jpg` | Flange bolt | B06-2 Flange Bolts | Original studio rendering for this page |
+| `images/product-studio/machine-screw-white-studio.jpg` | Machine screw | B07-1 Machine Screws | Original studio rendering for this page |
+| `images/product-studio/self-tapping-screw-white-studio.jpg` | Self-tapping screw | B07-2 Self-Tapping Screws | Original studio rendering for this page |
+| `images/product-studio/socket-screw-white-studio.jpg` | Socket screw | B07-3 Socket Screws | Original studio rendering for this page |
+| `images/product-studio/hex-nut-white-studio.jpg` | Hex nut | B08-1 Hex Nuts | Original studio rendering for this page |
+| `images/product-studio/lock-nut-white-studio.jpg` | Lock nut | B08-2 Lock Nuts | Original studio rendering for this page |
+| `images/product-studio/flange-nut-white-studio.jpg` | Flange nut | B08-3 Flange Nuts | Original studio rendering for this page |
+| `images/product-studio/flat-washer-white-studio.jpg` | Flat washer | B09-1 Flat Washers | Original studio rendering for this page |
+| `images/product-studio/spring-washer-white-studio.jpg` | Spring washer | B09-2 Spring Washers | Original studio rendering for this page |
+| `images/product-studio/special-washer-white-studio.jpg` | Square special washer | B09-3 Special Washers | Original studio rendering for this page |
+| `images/product-studio/fully-threaded-rod-white-studio.jpg` | Fully threaded rod | B10-1 Fully Threaded Rods | Original studio rendering for this page |
+| `images/product-studio/partly-threaded-rod-white-studio.jpg` | Partly threaded rod | B10-2 Partly Threaded Rods | Original studio rendering for this page |
+| `images/product-studio/stud-white-studio.jpg` | Stud, threaded at both ends | B10-3 Studs | Original studio rendering for this page |
+| `images/product-studio/drawing-based-white-studio.jpg` | Square-head drawing-based fastener | B11-1 Drawing-Based Parts | Original studio rendering for this page |
+| `images/product-studio/non-standard-white-studio.jpg` | T-head non-standard fastener | B11-2 Non-Standard Forms | Original studio rendering for this page |
+| `images/product-studio/precision-component-white-studio.jpg` | Stepped precision component | B12-1 Precision Components to Drawing | Original studio rendering for this page |
+| `images/types/heavy-hex-bolt.svg` | Heavy hex bolt | B06-3, draft | Original line drawing for this page |
+| `images/types/socket-cap-bolt.svg` | Socket head cap bolt | B06-4, draft | Original line drawing for this page |
+| `images/types/anchor-bolt.svg` | L-shaped anchor bolt | B06-5, draft | Original line drawing for this page |
+| `images/types/u-bolt.svg` | U-bolt | B06-6, draft | Original line drawing for this page |
+| `images/types/tolerance-parts.svg` | Stepped part with witness lines | B12-2, draft | Original line drawing for this page |
 
-> Placeholder — not a Dingtour photograph
-
-| Local file | What it depicts | Source | Author | License |
-|---|---|---|---|---|
-| `images/products/bolts.jpg` | One hex-head bolt | Original illustration | Haiyan Dingtour Hardware brochure | Original work for this site |
-| `images/products/screws.jpg` | One socket cap screw | Original illustration | Haiyan Dingtour Hardware brochure | Original work for this site |
-| `images/products/nuts.jpg` | Two hex nuts | Original illustration | Haiyan Dingtour Hardware brochure | Original work for this site |
-| `images/products/washers.jpg` | One flat washer and one spring washer | Original illustration | Haiyan Dingtour Hardware brochure | Original work for this site |
-| `images/products/rods.jpg` | One threaded rod and one shorter stud | Original illustration | Haiyan Dingtour Hardware brochure | Original work for this site |
-| `images/products/custom.jpg` | One flanged shoulder bolt (custom / special form) | Original illustration | Haiyan Dingtour Hardware brochure | Original work for this site |
-| `images/products/cnc.jpg` | One stepped precision-machined component | Original illustration | Haiyan Dingtour Hardware brochure | Original work for this site |
+Other files in `images/types/` are the same original line-drawing set and are not shown on the page. The earlier graphite catalog illustrations under `images/products/` are no longer published.
 
 ## Logo
 
