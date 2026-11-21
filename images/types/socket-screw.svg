@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" fill="none" role="img" aria-hidden="true">
+  <title>Socket screw</title>
+  <g stroke="#1C242C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <rect x="90" y="22" width="60" height="46" rx="1"/>
+    <polygon points="120,28 133,36 133,50 120,58 107,50 107,36"/>
+    <rect x="100" y="68" width="40" height="108"/>
+    <line x1="100" y1="80.0" x2="140.0" y2="85.0"/>
+    <line x1="100" y1="92.0" x2="140.0" y2="97.0"/>
+    <line x1="100" y1="104.0" x2="140.0" y2="109.0"/>
+    <line x1="100" y1="116.0" x2="140.0" y2="121.0"/>
+    <line x1="100" y1="128.0" x2="140.0" y2="133.0"/>
+    <line x1="100" y1="140.0" x2="140.0" y2="145.0"/>
+    <line x1="100" y1="152.0" x2="140.0" y2="157.0"/>
+    <line x1="100" y1="164.0" x2="140.0" y2="169.0"/>
+    <path d="M100 176 L100 172 L140 172 L140 176"/>
+  </g>
+</svg>

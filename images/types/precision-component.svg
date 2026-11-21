@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" fill="none" role="img" aria-hidden="true">
+  <title>Precision component</title>
+  <g stroke="#1C242C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M24 86 L24 114 L52 114 L52 128 L92 128 L92 136 L148 136 L148 120 L188 120 L188 108 L216 108 L216 92 L188 92 L188 80 L148 80 L148 64 L92 64 L92 72 L52 72 L52 86 Z"/>
+    <line x1="52" y1="72" x2="52" y2="128"/>
+    <line x1="92" y1="64" x2="92" y2="136"/>
+    <line x1="148" y1="80" x2="148" y2="120"/>
+    <line x1="188" y1="80" x2="188" y2="120"/>
+    <path d="M108 64 L108 56 L132 56 L132 64"/>
+    <path d="M108 136 L108 144 L132 144 L132 136"/>
+  </g>
+</svg>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" fill="none" role="img" aria-hidden="true">
+  <title>Lock nut</title>
+  <g stroke="#1C242C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <polygon points="120,38 166,65 166,110 120,137 74,110 74,65"/>
+    <circle cx="120" cy="88" r="22"/>
+    <circle cx="120" cy="88" r="16"/>
+    <path d="M74 110 L74 132 Q74 146 120 146 Q166 146 166 132 L166 110"/>
+    <line x1="78" y1="124" x2="162" y2="124"/>
+  </g>
+</svg>

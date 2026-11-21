@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" fill="none" role="img" aria-hidden="true">
+  <title>Stud</title>
+  <g stroke="#1C242C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M28 88 L34 78 L86 78 L86 122 L34 122 L28 112 Z"/>
+    <rect x="86" y="78" width="68" height="44"/>
+    <path d="M154 78 L206 78 L212 88 L212 112 L206 122 L154 122 Z"/>
+    <line x1="38.8" y1="78.0" x2="43.8" y2="122.0"/>
+    <line x1="47.4" y1="78.0" x2="52.4" y2="122.0"/>
+    <line x1="56.1" y1="78.0" x2="61.1" y2="122.0"/>
+    <line x1="64.8" y1="78.0" x2="69.8" y2="122.0"/>
+    <line x1="73.4" y1="78.0" x2="78.4" y2="122.0"/>
+    <line x1="82.1" y1="78.0" x2="87.1" y2="122.0"/>
+    <line x1="158.8" y1="78.0" x2="163.8" y2="122.0"/>
+    <line x1="167.4" y1="78.0" x2="172.4" y2="122.0"/>
+    <line x1="176.1" y1="78.0" x2="181.1" y2="122.0"/>
+    <line x1="184.8" y1="78.0" x2="189.8" y2="122.0"/>
+    <line x1="193.4" y1="78.0" x2="198.4" y2="122.0"/>
+    <line x1="202.1" y1="78.0" x2="207.1" y2="122.0"/>
+    <line x1="86" y1="78" x2="86" y2="122"/>
+    <line x1="154" y1="78" x2="154" y2="122"/>
+  </g>
+</svg>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" fill="none" role="img" aria-hidden="true">
+  <title>Partly threaded rod</title>
+  <g stroke="#1C242C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M22 88 L28 78 L118 78 L118 122 L28 122 L22 112 Z"/>
+    <path d="M118 78 L212 78 L218 88 L218 112 L212 122 L118 122 Z"/>
+    <line x1="123.2" y1="78.0" x2="129.2" y2="122.0"/>
+    <line x1="132.6" y1="78.0" x2="138.6" y2="122.0"/>
+    <line x1="142.0" y1="78.0" x2="148.0" y2="122.0"/>
+    <line x1="151.4" y1="78.0" x2="157.4" y2="122.0"/>
+    <line x1="160.8" y1="78.0" x2="166.8" y2="122.0"/>
+    <line x1="170.2" y1="78.0" x2="176.2" y2="122.0"/>
+    <line x1="179.6" y1="78.0" x2="185.6" y2="122.0"/>
+    <line x1="189.0" y1="78.0" x2="195.0" y2="122.0"/>
+    <line x1="198.4" y1="78.0" x2="204.4" y2="122.0"/>
+    <line x1="207.8" y1="78.0" x2="213.8" y2="122.0"/>
+    <line x1="118" y1="78" x2="118" y2="122"/>
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 200" fill="none" role="img" aria-hidden="true">
+  <title>Socket head cap bolt</title>
+  <g stroke="#1C242C" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <rect x="88" y="24" width="64" height="52" rx="1"/>
+    <polygon points="120,34 132,41 132,55 120,62 108,55 108,41"/>
+    <rect x="102" y="76" width="36" height="14"/>
+    <rect x="102" y="90" width="36" height="80"/>
+    <line x1="102.0" y1="94.9" x2="138.0" y2="99.9"/>
+    <line x1="102.0" y1="103.8" x2="138.0" y2="108.8"/>
+    <line x1="102.0" y1="112.7" x2="138.0" y2="117.7"/>
+    <line x1="102.0" y1="121.6" x2="138.0" y2="126.6"/>
+    <line x1="102.0" y1="130.4" x2="138.0" y2="135.4"/>
+    <line x1="102.0" y1="139.3" x2="138.0" y2="144.3"/>
+    <line x1="102.0" y1="148.2" x2="138.0" y2="153.2"/>
+    <line x1="102.0" y1="157.1" x2="138.0" y2="162.1"/>
+    <line x1="102.0" y1="166.0" x2="138.0" y2="171.0"/>
+    <path d="M102 170 L120 182 L138 170"/>
+  </g>
+</svg>
